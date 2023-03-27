@@ -1,0 +1,36 @@
+package {
+
+    default_applicable_licenses: ["packages_apps_systemsecuresettings_license"],
+}
+
+license {
+
+    name: "packages_apps_systemsecuresettings_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+// Include res dir from chips
+
+android_app {
+    name: "SystemSecureSettings",
+
+    srcs: [
+        "src/**/*.java",
+    ],
+
+    sdk_version: "current",
+    target_sdk_version: "30",
+    product_specific: true,
+
+    static_libs: [
+    	"androidx.appcompat_appcompat",
+    	"com.google.android.material_material",
+    	//"androidx.constraintlayout_constraintlayout",
+    ]
+}
